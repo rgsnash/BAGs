@@ -28,24 +28,101 @@ img{
     color: #555;
    
 }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px; 
+}
+.next {
+    right: 10px; 
+}
+
+
 h2{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 100%;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
-img .landing{
-    text-decoration: none;
-    color: #555;
-    width: 100px;
-    height: auto;   
+h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.grid-item.image {
+    position: relative; /* Make this the positioning context for the buttons */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Left side is for image, right side is for text */
+    height: 100vh; /* Makes the section occupy full viewport height */
+}
+
+.grid-item.image img {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover;
+}
+
+.grid-item.text {
     display: block;
-    margin: 20px auto;
+    justify-content: center; /* Centers the text horizontally */
+    align-items: center; /* Centers the text vertically */
+    text-align: center;
+    padding: 20px;
+
 }
+
+.grid-item.text-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    animation: slide-up 1s ease-in-out;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stacks image and text vertically on smaller screens */
+        height: auto; /* Allows section to adjust height based on content */
+    }
+
+    .grid-item.image img {
+        height: auto; /* Adjusts image height for smaller screens */
+    }
+
+    .grid-item.text {
+        padding: 10px;
+    }
+}
+
 
 html{
     scroll-snap-type: y mandatory;
+    scroll-padding-top: 30px;
 }
 
 section{
@@ -53,6 +130,8 @@ section{
     scroll-snap-align: start;
 }
 header{
+    position: fixed;
+    z-index: 10;
     width: 100%; 
     max-width: 1148px;
     max-width: 98%;
@@ -72,4 +151,147 @@ header .logo{
 
 header nav img{
     margin-left: 25px;
+}
+
+
+
+/*word*/
+
+.wrapper{
+    box-sizing: content-box;
+    background-color: #ffffff;
+    height: 80%;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    
+}
+.wrapper-second{
+    display: flex; /* Make wrapper a flex container */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Align items to the start */
+    align-items: center; /* Center items horizontally */
+    height: 100%;
+    
+}
+
+.phrase{
+    overflow: hidden;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: spin_words 6s infinite;
+}
+@keyframes spin_words{
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
+}
+
+
+/*product*/
+.options {
+    position: absolute;
+    bottom: 50px; /* Adjust to your preferred distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensures it floats on top of other elements */
+}
+
+.options button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #1b1a1a;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    z-index: 1000;
+}
+/* Animating text */
+span.display-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 1; /* Visible */
+    animation: slideUp 1s forwards; /* Sliding up animation */
+}
+
+/* Animating image to slide left */
+.grid-item.image img.second {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 1;
+    animation: slideLeft 1s forwards; /* Sliding left animation */
+}
+
+/* Keyframes for sliding text up */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(5%);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for sliding image to the left */
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+.phrase-second{
+    overflow: hidden;
+    margin-bottom: 1opx;
 }

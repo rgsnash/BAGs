@@ -12,29 +12,65 @@
         <div class="logo">SECOND</div>
         <nav>
             <img 
-                src="/assets/UK.png"
+                src="/BAGs/assets/UK.png"
                 alt="UK-flag"
             >
             <img 
-                src="/assets/Germany.png"
+                src="/BAGs/assets/Germany.png"
                 alt="Germany-flag"
             >
             <img 
-                src="/assets/Philippines.png"
+                src="/BAGs/assets/Philippines.png"
                 alt="Philippines-flag"
             >
         </nav>
     </header>
 </div>
 <div>
-   <section>
-    <h2> GIVE BEAUTIFUL BAG SECOND CHANCE </h2>
-    
-   </section>
-   <section>
-    <h2> PRE-LOVED LOUIS VUITTON </h2>
+    <section class="grid-container">
+        <div class="grid-item image">
+            <img class="landing" src="/BAGs/assets/ysl.avif" alt="ysl-bag">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <div class="grid-item text">
+            <div class="wrapper">
+                <div class="phrase">
+                    <span> BEAUTIFUL BAG A SECOND CHANCE </span>
+                    <span> GIVE BEAUTIFUL BAG A SECOND CHANCE </span>
+                    <span> HIGH END BAGS </span>
+                    <span> BAGS ARE STILL GOOD QUALITY </span> 
+                    <span> USED BUT NOT ABUSED </span> 
+                    <span> BAGS NEEDS LOVE TOO </span> 
+                </div>
+             </div>
 
-   </section>
+        </div>
+    </section>
+    
+    <section class="grid-container">
+        <div class="grid-item image">
+            <div class="options">
+                <button onclick="changeContent(0)">Louis Vuitton</button>
+                <button onclick="changeContent(1)">Prada</button>
+                <button onclick="changeContent(2)">Dior</button>
+            </div>
+            <img class="landing second" src="/BAGs/assets/lvsmall.avif" alt="bag-image">
+        </div>
+        <div class="grid-item text-left">
+            <div class="wrapper-second">
+                <div class="phrase-second">
+                    <span class="display-text">Louis Vuitton - Classic and Timeless</span>
+                </div>
+                <div class="description">
+                        <strong>PRICE:</strong> ₱50,000<br>
+                        <strong>COLOR RATE:</strong> 5/5<br>
+                        <strong>ISSUES:</strong> None<br>
+                        <strong>CONDITION:</strong> Brand New
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
     <script src="app.js"></script>
